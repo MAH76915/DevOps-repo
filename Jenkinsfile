@@ -50,7 +50,7 @@ pipeline {
                         sh 'docker compose up -d'
                     } else if (params.BRANCH_NAME == 'staging') {
                         sh 'docker compose -f docker-compose.staging.yml build'
-                        sh 'docker compose -f docker-compose.staging.yml up -d'
+                        
                     } else {
                         echo "No deployment configured for branch: ${params.BRANCH_NAME}"
                     }
